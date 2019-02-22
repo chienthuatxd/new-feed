@@ -33,6 +33,7 @@ cp .env.example .env
 ```
 
 - Use any editor to edit .env file (ex: vim editor)
+
 Change below parameters to config database (note: db name is new database which created above step)
 ```bash
 DB_HOST=127.0.0.1
@@ -65,27 +66,27 @@ Use commands:
 
 - Read feed by id: `php artisan feed:read [id]`
 
-- Example: `php artisan feed:read 4`
+    Example: `php artisan feed:read 4`
 
 - Read feed by url: `php artisan feed:read-url [url]`
 
-Example: `php artisan feed:read-url https://vnexpress.net/rss/giai-tri.rss`
+    Example: `php artisan feed:read-url https://vnexpress.net/rss/giai-tri.rss`
 (note url must be existing in database)
 
 - Add new feed in to database: `php artisan feed:create [title] [url]`
 
-Example: `php artisan feed:create "Thoi su" https://vnexpress.net/rss/giai-tri.rss`
+    Example: `php artisan feed:create "Thoi su" https://vnexpress.net/rss/giai-tri.rss`
 
 - Remove a feed from database: `php artisan feed:remove [id]`
 
-Example: `php artisan feed:remove 6`
+    Example: `php artisan feed:remove 6`
 
 
 ## 3. View Web browse Mode
 
 Use command to start: `php artisan serve --port [PORT]`
 
-Example: `php artisan serve --port 5555`
+    Example: `php artisan serve --port 5555`
 
 And then open Chrome via link http://127.0.0.1:5555
 
