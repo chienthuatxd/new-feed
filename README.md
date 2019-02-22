@@ -1,4 +1,4 @@
-##1. Setup project
+## 1. Setup project
 - Install PHP >= 7.1.3
   Require some extension
     * OpenSSL PHP Extension
@@ -59,30 +59,36 @@ php artisan migrate --seed
 
 Build success!
 
-##2. View CLI Mode
+## 2. View CLI Mode
 Use commands:
-Show list feed: `php artisan feed:list`
+- Show list feed: `php artisan feed:list`
 
-Read feed by id: `php artisan feed:read [id]`
-    Example: `php artisan feed:read 4`
+- Read feed by id: `php artisan feed:read [id]`
 
-Read feed by url: `php artisan feed:read-url [url]`
-    Example: 
-`php artisan feed:read-url https://vnexpress.net/rss/giai-tri.rss`
+- Example: `php artisan feed:read 4`
+
+- Read feed by url: `php artisan feed:read-url [url]`
+
+Example: `php artisan feed:read-url https://vnexpress.net/rss/giai-tri.rss`
 (note url must be existing in database)
 
-Add new feed in to database: `php artisan feed:create [title] [url]`
-Example: 
-`php artisan feed:create "Thoi su" https://vnexpress.net/rss/giai-tri.rss`
+- Add new feed in to database: `php artisan feed:create [title] [url]`
 
-Remove a feed from database: `php artisan feed:remove [id]`
+Example: `php artisan feed:create "Thoi su" https://vnexpress.net/rss/giai-tri.rss`
+
+- Remove a feed from database: `php artisan feed:remove [id]`
+
 Example: `php artisan feed:remove 6`
 
 
-##3. View Web browse Mode
+## 3. View Web browse Mode
+
 Use command to start: `php artisan serve --port [PORT]`
+
 Example: `php artisan serve --port 5555`
 
 And then open Chrome via link http://127.0.0.1:5555
+
 Login via user: thanhpd.test@localhost.com/secret
+
 List feed: http://127.0.0.1:5555/feeds. From this screen, we can create new feed, view feed item, and delete feed
