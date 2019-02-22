@@ -30,7 +30,7 @@ composer install
 - Create new .env file from .env.example
 ```bash
 cp .env.example .env
-```bash
+```
 
 - Use any editor to edit .env file (ex: vim editor)
 Change below parameters to config database (note: db name is new database which created above step)
@@ -50,7 +50,7 @@ php artisan key:generate
 - Clear cache config: 
 ```bash
 php artisan config:cache
-```bash
+```
 
 - Migrate database and seed example data: 
 ```bash
