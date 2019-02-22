@@ -1,7 +1,8 @@
 <?php
-namespace App\Console\Commands\DisplayFeed;
+namespace App\Console\Commands\Traits;
 
 use App\Services\ParseNewFeedService;
+
 trait DisplayFeed
 {
     public function display($newFeed)

@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\NewFeed;
 use App\Services\ParseNewFeedService;
-use App\Console\Commands\DisplayFeed\DisplayFeed;
+use App\Console\Commands\Traits\DisplayFeed;
 
 class FeedRead extends Command
 {
