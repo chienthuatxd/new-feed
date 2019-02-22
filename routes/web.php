@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->middleware('auth')->name('home');
 Auth::routes();
+Route::resource('feeds', 'FeedController')->middleware('auth');
+Route::redirect('/home', 'feeds');

@@ -4,9 +4,13 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\NewFeed;
+use App\Services\ParseNewFeedService;
+use App\Console\Commands\DisplayFeed\DisplayFeed;
 
 class FeedReadUrl extends Command
 {
+    use DisplayFeed;
+
     /**
      * The name and signature of the console command.
      *
@@ -40,13 +44,6 @@ class FeedReadUrl extends Command
     {
         $url = $this->argument('url');
         $newFeed = NewFeed::where('url', $url)->first();
-        if ($newFeed) {
-            $itemList = ParseNewFeedService::parseItemsNewFeed($newFeed->url);
-            $headers = ['Title', 'Published Date'];
-
-            $this->table($headers, $itemList);
-        } else {
-            $this->error('New feed not found');
-        }
+        $this->display($newFeed);
     }
 }

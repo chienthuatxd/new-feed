@@ -38,7 +38,7 @@ class FeedList extends Command
      */
     public function handle()
     {
-        $headers = ['ID', 'Title', 'URL'];
+        $headers = [__('common.label_id'), __('common.label_title'), __('common.label_url')];
 
         $newFeeds = NewFeed::all(['id', 'title', 'url'])->toArray();
 

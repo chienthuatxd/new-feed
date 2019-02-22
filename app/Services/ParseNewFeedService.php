@@ -21,14 +21,15 @@ class ParseNewFeedService
 
     public static function parseAtomFeed(\SimpleXMLElement $xml)
     {
-        $itemList = [];
+        $itemList = collect();
 
         foreach ($xml->entry as $element) {
             $itemData = [
                 'title' => $element->title,
                 'pubDate' => $element->updated,
+                'link' => $element->link['href'],
             ];
-            $itemList[] = $itemData;
+            $itemList->push($itemData);
         }
 
         return $itemList;
@@ -36,14 +37,15 @@ class ParseNewFeedService
 
     public static function parseRssFeed(\SimpleXMLElement $xml)
     {
-        $itemList = [];
+        $itemList = collect();
 
         foreach ($xml->channel->item as $element) {
             $itemData = [
                 'title' => $element->title,
                 'pubDate' => $element->pubDate,
+                'link' => $element->link,
             ];
-            $itemList[] = $itemData;
+            $itemList->push($itemData);
         }
 
         return $itemList;
